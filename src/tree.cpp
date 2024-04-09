@@ -2,19 +2,17 @@
 
 //===============================================
 
-node* make_node(list_struct* values, enum operations type)
+node* make_node(int type, void* content)
 {
     node* new_node = (node*) calloc(1, sizeof(node));
-    if (type == VALUE)
-    {
-        new_node->list = values;
-    }
-    else
-    {
-        new_node->list = make_list(LIST_LEN);
-    }
-    new_node->operation_type = type;
-
+    new_node->type = type;
+    if (type == VALUE_TYPE)
+        new_node->content.value = *(double*)(content);
+    else if (type == VARYABLE_TYPE)
+        new_node->content.variable = *(char*)(content);
+    else if (type == OPER_TYPE)
+        new_node->content.token = *(enum tokens*)(content);
+   // printf("%d\n", (int)new_node->content.token);
 
     new_node->left = NULL;
     new_node->right = NULL;
@@ -34,9 +32,8 @@ tree* make_tree()
 
 //===============================================
 
-node* append_to_tree(tree* tree, list_struct* new_val, enum operations type, node* current_node, int indicator)
+node* append_to_tree(tree* tree, node* new_node, node* current_node, int indicator)
 {
-    node* new_node = make_node(new_val, type);
     tree->size++;
 
     if (tree->size == 1)
@@ -61,55 +58,55 @@ node* append_to_tree(tree* tree, list_struct* new_val, enum operations type, nod
 
 //=======================================================
 
-node* insert_into_tree(tree* tree, node* new_node, node* current_node, int indicator)
-{
-   // node* new_node = make_node(new_val, type);
-    tree->size++
-
-    if (tree->size == 1)
-    {
-        tree->root = new_node;
-        return new_node;
-    }
-
-    if (indicator == PREV)
-    {
-        if (current_node == tree->root)
-        {
-            new_node->left = tree->root;
-            tree->root->prev = new_node;
-            tree->root = new_node;
-        }
-        else
-        {
-            if (current_node->prev->left == current_node)
-            {
-                current_node->prev->left = new_node;
-            }
-            else if (current_node->prev->right == current_node)
-            {
-                current_node->prev->right = new_node;
-            }
-            current_node->prev = new_node;
-        }
-    }
-
-    else if (indicator == LEFT)
-    {
-        new_node->left = current_node->left;
-        current_node->left = new_node;
-        new_node->prev = current_node;
-    }
-
-    else if (indicator == RIGHT)
-    {
-        new_node->right = current_node->right;
-        current_node->right = new_node;
-        new_node->prev = current_node;
-    }
-
-    return new_node;
-}
+// node* insert_into_tree(tree* tree, node* new_node, node* current_node, int indicator)
+// {
+//    // node* new_node = make_node(new_val, type);
+//     tree->size++
+//
+//     if (tree->size == 1)
+//     {
+//         tree->root = new_node;
+//         return new_node;
+//     }
+//
+//     if (indicator == PREV)
+//     {
+//         if (current_node == tree->root)
+//         {
+//             new_node->left = tree->root;
+//             tree->root->prev = new_node;
+//             tree->root = new_node;
+//         }
+//         else
+//         {
+//             if (current_node->prev->left == current_node)
+//             {
+//                 current_node->prev->left = new_node;
+//             }
+//             else if (current_node->prev->right == current_node)
+//             {
+//                 current_node->prev->right = new_node;
+//             }
+//             current_node->prev = new_node;
+//         }
+//     }
+//
+//     else if (indicator == LEFT)
+//     {
+//         new_node->right = current_node->left;
+//         current_node->left = new_node;
+//         new_node->prev = current_node;
+//     }
+//
+//     else if (indicator == RIGHT)
+//     {
+//         new_node->left = current_node->right;
+//         current_node->right = new_node;
+//         new_node->prev = current_node;
+//     }
+//
+//     return new_node;
+// }
 
 //=======================================================
 
@@ -124,14 +121,12 @@ void delete_node(node* deleted_node)
     if (deleted_node->right)
         delete_node(deleted_node->right);
 
-    if (new_node->list)
-        free(new_node->list);
     free(deleted_node);
 }
 
 //==============================================
 
-void tree_desructor(tree* deleted_tree)
+void destruct_tree(tree* deleted_tree)
 {
     if (!deleted_tree)
         return
@@ -140,7 +135,42 @@ void tree_desructor(tree* deleted_tree)
 }
 
 //===============================================
+char str2[20];
 
+char* take_str_from_node(node* cur_node)
+{
+    switch (cur_node->type)
+    {
+        case OPER_TYPE:
+            return decode_operation(cur_node);
+        case VALUE_TYPE:
+            sprintf(str2, "%.2lf", cur_node->content.value);
+            return str2;
+        case VARYABLE_TYPE:
+            return &cur_node->content.variable;
+    }
+}
+
+//================================================
+
+char* decode_operation(node* cur_node)
+{
+    switch (cur_node->content.token)
+    {
+        case ADD:
+            return (char*)"+";
+        case SUBTRACT:
+            return (char*)"-";
+        case MULTIPLY:
+            return (char*)"*";
+        case DIVISION:
+            return (char*)"/";
+        case POWER:
+            return (char*)"^";
+        default:
+            return (char*)"hui";
+    }
+}
 // void print_tree(Node* root, FILE* file)
 // {
 //     if (!root)
@@ -193,3 +223,4 @@ void tree_desructor(tree* deleted_tree)
 // }
 
 //=====================================================================
+

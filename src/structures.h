@@ -1,8 +1,5 @@
-#include "differentiator.h"
-
-enum operations
+enum tokens
 {
-    VALUE = 0,
     OPENING_BR = 1,
     CLOSING_BR = 2,
     POWER = 3,
@@ -13,27 +10,34 @@ enum operations
     UNKNOWN = 8
 };
 
-typedef struct {
-    double* data;
-    int capacity;
-    int size;
-} list_struct;
+union node_data {
+    double value;
+    enum tokens token;
+    char variable;
+};
 
 typedef struct node {
-    list_struct* list;
-    enum operations operation_type;
+    union node_data content;
+    int type;
+    int status = NOT_IN_BRACKETS;
     struct node* left;
     struct node* right;
     struct node* prev;
 } node;
 
 typedef struct {
+    TYPE_LIST* data;
+    int capacity;
+    int size;
+} list_struct;
+
+typedef struct {
     node* root;
     int size;
 } tree;
 
-// typedef struct {
-//     stack_t* data;
-//     int size;
-//     int capacity;
-// } stack;
+typedef struct stack {
+    int* data;
+    int size;
+    int capacity;
+} stack;

@@ -1,0 +1,34 @@
+digraph G {                
+  tree [shape=box ; stryle=rounded ; label="size : 17"];                
+  edge [color=black];                
+  node [shape=record ; style=rounded ; color=green];
+14353584 [label="{+|{<YES> YES|<NO> NO}}"];
+14358232 [label="{2.00}"];
+14353744 [label="{-|{<YES> YES|<NO> NO}}"];
+14353664 [label="{*|{<YES> YES|<NO> NO}}"];
+14353624 [label="{3451.00}"];
+14353704 [label="{4.00}"];
+14364152 [label="{+|{<YES> YES|<NO> NO}}"];
+14353784 [label="{535.00}"];
+14364272 [label="{-|{<YES> YES|<NO> NO}}"];
+14364232 [label="{54.00}"];
+14364400 [label="{/|{<YES> YES|<NO> NO}}"];
+14358184 [label="{4.00}"];
+14364480 [label="{*|{<YES> YES|<NO> NO}}"];
+14364440 [label="{3.00}"];
+14363216 [label="{x}"];
+14353584:<YES> -> 14358232 [color=green];
+14353584:<NO> -> 14353744 [color=red];
+14353744:<YES> -> 14353664 [color=green];
+14353664:<YES> -> 14353624 [color=green];
+14353664:<NO> -> 14353704 [color=red];
+14353744:<NO> -> 14364152 [color=red];
+14364152:<YES> -> 14353784 [color=green];
+14364152:<NO> -> 14364272 [color=red];
+14364272:<YES> -> 14364232 [color=green];
+14364272:<NO> -> 14364400 [color=red];
+14364400:<YES> -> 14358184 [color=green];
+14364400:<NO> -> 14364480 [color=red];
+14364480:<YES> -> 14364440 [color=green];
+14364480:<NO> -> 14363216 [color=red];
+}
