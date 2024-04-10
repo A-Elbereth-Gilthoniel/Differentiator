@@ -1,0 +1,26 @@
+digraph G {                
+  tree [shape=box ; stryle=rounded ; label="size : 13"];                
+  edge [color=black];                
+  node [shape=record ; style=rounded ; color=green];
+14912904 [label="{*|{<YES>LEFT|<NO>RIGHT}}"];
+14911648 [label="{/|{<YES>LEFT|<NO>RIGHT}}"];
+14910888 [label="{1.00}"];
+14910808 [label="{^|{<YES>LEFT|<NO>RIGHT}}"];
+14910408 [label="{cos|{<YES>LEFT|<NO>RIGHT}}"];
+14911328 [label="{-1.00}"];
+14911408 [label="{/|{<YES>LEFT|<NO>RIGHT}}"];
+14910968 [label="{x}"];
+14911368 [label="{5.00}"];
+14910768 [label="{2.00}"];
+14913544 [label="{0.20}"];
+14912904:<YES> -> 14911648 [color=green];
+14911648:<YES> -> 14910888 [color=green];
+14911648:<NO> -> 14910808 [color=red];
+14910808:<YES> -> 14910408 [color=green];
+14910408:<YES> -> 14911328 [color=green];
+14910408:<NO> -> 14911408 [color=red];
+14911408:<YES> -> 14910968 [color=green];
+14911408:<NO> -> 14911368 [color=red];
+14910808:<NO> -> 14910768 [color=red];
+14912904:<NO> -> 14913544 [color=red];
+}

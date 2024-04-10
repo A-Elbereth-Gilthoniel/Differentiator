@@ -1,13 +1,18 @@
 enum tokens
 {
-    OPENING_BR = 1,
-    CLOSING_BR = 2,
-    POWER = 3,
-    MULTIPLY = 4,
-    DIVISION = 5,
-    ADD = 6,
-    SUBTRACT = 7,
-    UNKNOWN = 8
+    OPENING_BR,
+    CLOSING_BR,
+    POWER,
+    MULTIPLY,
+    DIVISION,
+    ADD,
+    SUBTRACT,
+    COS,
+    SIN,
+    TAN,
+    CTAN,
+    LN,
+    UNKNOWN
 };
 
 union node_data {

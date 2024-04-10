@@ -1,0 +1,14 @@
+digraph G {                
+  tree [shape=box ; stryle=rounded ; label="size : 5"];                
+  edge [color=black];                
+  node [shape=record ; style=rounded ; color=green];
+14888144 [label="{tg|{<YES>LEFT|<NO>RIGHT}}"];
+14878000 [label="{-1.00}"];
+14888024 [label="{/|{<YES>LEFT|<NO>RIGHT}}"];
+14878040 [label="{x}"];
+14878080 [label="{5.00}"];
+14888144:<YES> -> 14878000 [color=green];
+14888144:<NO> -> 14888024 [color=red];
+14888024:<YES> -> 14878040 [color=green];
+14888024:<NO> -> 14878080 [color=red];
+}

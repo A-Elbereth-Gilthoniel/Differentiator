@@ -19,6 +19,7 @@ void print_list(list_struct* list);
 int search_elem_in_list(list_struct* list, node* elem, int direction);
 list_struct* cut_from_list(list_struct* copied_list, int start_i, int finish_i);
 void remove_from_list(list_struct* list, int index);
+list_struct* reversed_list(list_struct* list);
 // tree.cpp
 node* make_node(int type, void* content);
 tree* make_tree();
@@ -27,6 +28,7 @@ void delete_node(node* deleted_node);
 void destruct_tree(tree* deleted_tree);
 char* decode_operation(node* cur_node);
 char* take_str_from_node(node* cur_node);
+node* copy_node(node* copied_node);
 // checking_values.cpp
 int cmp_with_number(double number1, double number2);
 // stack.cpp
@@ -38,16 +40,33 @@ void print_stack(stack* st);
 void realloc_stack(stack *st, int new_capacity);
 char* stack_verification(stack *st);
 // graph.cpp
-void draw_graph(tree* cur_tree);
+void draw_graph(tree* cur_tree, const char* file_name);
 void print_node_in_graph(FILE* fp, node* cur_node);
 void print_edge_in_graph(FILE* fp, node* cur_node);
 // lex_analysis.cpp
 list_struct* lexical_analysis(char* str);
 node* encode(char* str);
 double get_value(char* str);
+node* check_func(char* str);
 // parser.cpp
 tree* parsing(list_struct* token_list);
-node* stmt(list_struct* token_list);
-node* expr(list_struct* token_list);
-node* term(list_struct* token_list);
-node* fact(list_struct* token_list);
+node* handle_start(list_struct* token_list);
+node* handle_plus_minus(list_struct* token_list);
+node* handle_mul_div(list_struct* token_list);
+node* handle_power(list_struct* token_list);
+node* handle_func(list_struct* token_list);
+node* handle_val_var(list_struct* token_list);
+// optimization.cpp
+tree* simplify_tree(tree* handled_tree);
+node* simplify(node* handled_node);
+node* do_operation(node* oper_node, node* left_node, node* right_node);
+node* optimizate_if_right_zero(node* oper_node, node* left_node);
+node* optimizate_if_left_zero(node* oper_node, node* right_node);
+// derivative.cpp
+tree* take_tree_of_derivative(tree* handled_tree);
+node* take_derivative(node* handled_node);
+node* do_der_oper(node* oper_node);
+node* get_der_mul(node* oper_node);
+node* get_der_log(node* oper_node);
+// checking_values.cpp
+int cmp_with_number(double number1, double number2);

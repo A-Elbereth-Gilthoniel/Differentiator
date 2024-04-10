@@ -21,6 +21,32 @@ node* make_node(int type, void* content)
 
 //===============================================
 
+node* copy_node(node* copied_node)
+{
+    node* new_node = (node*) calloc(1, sizeof(node));
+    new_node->type = copied_node->type;
+    if (copied_node->type == VALUE_TYPE)
+        new_node->content.value = copied_node->content.value;
+    else if (copied_node->type == VARYABLE_TYPE)
+        new_node->content.variable = copied_node->content.variable;
+    else if (copied_node->type == OPER_TYPE)
+        new_node->content.token = copied_node->content.token;
+    if (copied_node->left)
+    {
+        new_node->left = copy_node(copied_node->left);
+    }
+    if (copied_node->right)
+    {
+        new_node->right = copy_node(copied_node->right);
+    }
+    // new_node->left = NULL;
+    // new_node->right = NULL;
+    // new_node->prev = NULL;
+    return new_node;
+}
+
+//===============================================
+
 tree* make_tree()
 {
     tree* new_tree = (tree*) calloc(1, sizeof(tree));
@@ -167,6 +193,20 @@ char* decode_operation(node* cur_node)
             return (char*)"/";
         case POWER:
             return (char*)"^";
+        case COS:
+            return (char*)"cos";
+        case SIN:
+            return (char*)"sin";
+        case TAN:
+            return (char*)"tg";
+        case CTAN:
+            return (char*)"ctg";
+        case LN:
+            return (char*)"ln";
+        case OPENING_BR:
+            return (char*)"(";
+        case CLOSING_BR:
+            return (char*)")";
         default:
             return (char*)"hui";
     }

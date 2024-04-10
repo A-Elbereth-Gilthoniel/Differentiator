@@ -2,10 +2,10 @@
 
 //=============================================================
 
-void draw_graph(tree* cur_tree)
+void draw_graph(tree* cur_tree, const char* file_name)
 {
     char full_file_name[100] = FILE_REPOSITORY;
-    strcat(full_file_name, "Tree_graph.dot");
+    strcat(full_file_name, file_name);
     FILE* fp = fopen(full_file_name, "w");
 
     fprintf(fp, "digraph G {\
@@ -29,7 +29,7 @@ void print_node_in_graph(FILE* fp, node* cur_node)
         fprintf(fp, "%d [label=\"{%s}\"];\n", cur_node, take_str_from_node(cur_node));
         return;
     }
-    fprintf(fp, "%d [label=\"{%s|{<YES> YES|<NO> NO}}\"];\n", cur_node, take_str_from_node(cur_node));
+    fprintf(fp, "%d [label=\"{%s|{<YES>LEFT|<NO>RIGHT}}\"];\n", cur_node, take_str_from_node(cur_node));
     if (cur_node->left)
         print_node_in_graph(fp, cur_node->left);
     if (cur_node->right)

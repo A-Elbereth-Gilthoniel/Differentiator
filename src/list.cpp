@@ -129,3 +129,24 @@ list_struct* cut_from_list(list_struct* copied_list, int start_i, int finish_i)
     }
     return new_list;
 }
+
+//===============================================
+
+list_struct* reversed_list(list_struct* list)
+{
+    list_struct* new_list = make_list(list->capacity);
+    for (int i = 0; i< list->size; i++)
+    {
+        append_to_list(new_list, list->data[list->size - 1 - i]);
+    }
+    // while (start < end)
+    // {
+    //     temp = list->data[start];
+    //     list->data[start] = list->data[end];
+    //     list->data[end] = temp;
+    //     start++;
+    //     end--;
+    // }
+    fprintf(stderr, "SUCCESS REVERSE\n");
+    return new_list;
+}
