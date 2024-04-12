@@ -18,6 +18,7 @@ tree* simplify_tree(tree* handled_tree)
 
 node* simplify(node* handled_node)
 {
+    enum tokens buf_token = UNKNOWN;
     node* new_node = NULL;
     if (NODE_IS_VALUE(handled_node) || NODE_IS_VARYABLE(handled_node))
     {
@@ -38,6 +39,32 @@ node* simplify(node* handled_node)
         new_node = optimizate_if_right_zero(handled_node, left_node);
         if (new_node)
             return new_node;
+    }
+
+    if (NODE_IS_MULTIPLY(handled_node) || NODE_IS_DIVISION(handled_node))
+    {
+        if ((NODE_IS_PLUS(right_node) || NODE_IS_MINUS(right_node)) && NODE_IS_MULTIPLY(handled_node))
+        {
+            new_node = make_node(OPER_TYPE, &right_node->content.token);
+            new_node->left = make_node(OPER_TYPE, &handled_node->content.token);
+            new_node->right = make_node(OPER_TYPE, &handled_node->content.token);
+            // fprintf(stderr, "the last day: %s %s", take_str_from_node(new_node->left), take_str_from_node(new_node->right));
+            new_node->left->left = new_node->right->left = left_node;
+            new_node->left->right = right_node->left;
+            new_node->right->right = right_node->right;
+            return simplify(new_node);
+        }
+        if (NODE_IS_PLUS(left_node) || NODE_IS_MINUS(left_node))
+        {
+            new_node = make_node(OPER_TYPE, &left_node->content.token);
+            new_node->left = make_node(OPER_TYPE, &handled_node->content.token);
+            new_node->right = make_node(OPER_TYPE, &handled_node->content.token);
+            // fprintf(stderr, "the last day: %s %s", take_str_from_node(new_node->left), take_str_from_node(new_node->right));
+            new_node->left->right = new_node->right->right = right_node;
+            new_node->left->left = left_node->left;
+            new_node->right->left = left_node->right;
+            return simplify(new_node);
+        }
     }
 
     if (NODE_IS_VALUE(left_node) && NODE_IS_VALUE(right_node))

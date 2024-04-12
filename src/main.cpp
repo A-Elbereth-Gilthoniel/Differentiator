@@ -34,7 +34,10 @@ int main(int argc, char *argv[])
     tree* new_tree2 = simplify_tree(derivative_tree);
     draw_graph(new_tree2, "Tree_graph4.dot");
 
+    make_tex_file(new_tree, new_tree2);
+
     fprintf(stderr, "SUCCESS4!!!\n");
+
     return 0;
 }
 

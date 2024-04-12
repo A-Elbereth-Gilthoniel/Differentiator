@@ -70,3 +70,7 @@ node* get_der_mul(node* oper_node);
 node* get_der_log(node* oper_node);
 // checking_values.cpp
 int cmp_with_number(double number1, double number2);
+// latex.cpp
+void make_tex_file(tree* start_tree, tree* final_tree);
+void handle_operation(node* cur_node, char* str);
+struct whore get_expr(node* handled_node);
