@@ -170,7 +170,10 @@ char* take_str_from_node(node* cur_node)
         case OPER_TYPE:
             return decode_operation(cur_node);
         case VALUE_TYPE:
-            sprintf(str2, "%.2lf", cur_node->content.value);
+            if (cmp_with_number(cur_node->content.value, (double)(int)(cur_node->content.value)))
+                sprintf(str2, "%d", (int)cur_node->content.value);
+            else
+                sprintf(str2, "%.2lf", cur_node->content.value);
             return str2;
         case VARYABLE_TYPE:
             return &cur_node->content.variable;

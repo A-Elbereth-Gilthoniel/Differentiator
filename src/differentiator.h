@@ -9,6 +9,8 @@ void file_validation(char* file_name);
 size_t find_file_size(FILE* fp);
 // string.cpp
 int delete_n_and_r(char* str);
+char* space_replace(char *orig, int size);
+char* read_and_handle_file(char* file_name);
 // list.cpp
 list_struct* make_list(int length);
 void list_realloc(list_struct* list, int new_capacity);
@@ -71,6 +73,6 @@ node* get_der_log(node* oper_node);
 // checking_values.cpp
 int cmp_with_number(double number1, double number2);
 // latex.cpp
-void make_tex_file(tree* start_tree, tree* final_tree);
+void make_tex_file(char* start_str, char* final_str);
 void handle_operation(node* cur_node, char* str);
 struct whore get_expr(node* handled_node);

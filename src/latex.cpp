@@ -1,12 +1,10 @@
 #include "differentiator.h"
 
 struct whore {
-    char str[100];
+    char str[150];
 };
 
-char final_str[1000];
-
-void make_tex_file(tree* start_tree, tree* final_tree)
+void make_tex_file(char* start_str, char* final_str)
 {
     char full_file_name[100] = FILE_REPOSITORY;
     strcat(full_file_name, "differentiator.tex");
@@ -26,14 +24,14 @@ void make_tex_file(tree* start_tree, tree* final_tree)
     fprintf(tex, "In the beggining we had\n");
 
     fprintf(tex, "\\begin {equation}\n");
-    handle_operation(start_tree->root, final_str);
-    fprintf(tex, "%s\n", final_str);
+   // handle_operation(start_tree->root, final2_str);
+    fprintf(tex, "%s\n", start_str);
     fprintf(tex,"\\end {equation}\n");
     fprintf(tex, "\n\nIn the end it doesnt even matter\n");
     fprintf(tex, "\\begin {equation}\n");
-    handle_operation(final_tree->root, final_str);
+  //  handle_operation(final_tree->root, final_str);
     fprintf(tex, "%s\n", final_str);
-    fprintf(stderr, "%d\n", strlen(final_str));
+   // fprintf(stderr, "%s\n", final_str);
     fprintf(tex,"\\end {equation}\n");
 
     fprintf(tex, "\\end{document}\n");
@@ -60,21 +58,6 @@ struct whore get_expr(node* handled_node)
 
 //=======================================================
 
-// char* line2[100];
-//
-// char* get_expr(node* handled_node)
-// {
-//     switch (handled_node->type)
-//     {
-//         case VALUE_TYPE:
-//         case VARYABLE_TYPE:
-//             return take_str_from_node(handled_node);
-//         case OPER_TYPE:
-//             handle_operation(handled_node, line2);
-//     }
-//     return line2;
-// }
-
 void handle_operation(node* cur_node, char* str)
 {
     switch (cur_node->content.token)
@@ -100,23 +83,23 @@ void handle_operation(node* cur_node, char* str)
             break;
            //return str
         case COS:
-            sprintf(str, "\\cos{%s}", get_expr(cur_node->right).str);
+            sprintf(str, "\\cos(%s)", get_expr(cur_node->right).str);
             break;
            //return str
         case SIN:
-            sprintf(str, "\\sin{%s}", get_expr(cur_node->right).str);
+            sprintf(str, "\\sin(%s)", get_expr(cur_node->right).str);
             break;
            //return str
         case TAN:
-            sprintf(str, "\\tan{%s}", get_expr(cur_node->right).str);
+            sprintf(str, "\\tan(%s)", get_expr(cur_node->right).str);
             break;
            //return str
         case CTAN:
-            sprintf(str, "\\cot{%s}", get_expr(cur_node->right).str);
+            sprintf(str, "\\cot(%s)", get_expr(cur_node->right).str);
             break;
            //return str
         case LN:
-            sprintf(str, "\\ln{%s}", get_expr(cur_node->right).str);
+            sprintf(str, "\\ln(%s)", get_expr(cur_node->right).str);
             break;
            //return str
         default:

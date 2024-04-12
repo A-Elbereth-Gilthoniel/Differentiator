@@ -54,3 +54,13 @@ size_t find_file_size(FILE* fp)
     return n;
 }
 
+//===========================================================
+
+char* read_and_handle_file(char* file_name)
+{
+    size_t num_of_symbols = 0;
+    char* str = read_file(file_name, &num_of_symbols);
+    num_of_symbols -= delete_n_and_r(str);
+    str = space_replace(str, num_of_symbols);
+    return str;
+}
