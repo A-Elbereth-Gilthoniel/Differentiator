@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.13)  13 APR 2024 01:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.4.13)  2 JUN 2024 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -212,38 +212,55 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box54
 ))
 Package: xfp 2023-10-10 L3 Floating point unit
-)) (differentiator.aux)
+))
+(C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count279
+\float@exts=\toks31
+\float@box=\box55
+\@float@everytoks=\toks32
+\@floatcapt=\box56
+)
+(C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/latex/wrapfig\wrapfig.st
+y
+\wrapoverhang=\dimen162
+\WF@size=\dimen163
+\c@WF@wrappedlines=\count280
+\WF@box=\box57
+\WF@everypar=\toks33
+Package: wrapfig 2003/01/31  v 3.6
+) (differentiator.aux)
 \openout1 = `differentiator.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 (C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-p
 df.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
-\scratchdimen=\dimen162
-\scratchbox=\box55
-\nofMPsegments=\count280
-\nofMParguments=\count281
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count282
-\MPscratchDim=\dimen163
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count281
+\scratchdimen=\dimen164
+\scratchbox=\box58
+\nofMPsegments=\count282
+\nofMParguments=\count283
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count284
+\MPscratchDim=\dimen165
+\MPnumerator=\count285
+\makeMPintoPDFobject=\count286
+\everyMPtoPDFconversion=\toks35
 )
 (C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epsto
 pdf-base.sty
@@ -255,18 +272,37 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Calculating math sizes for size <11.99997> on input line 9.
+LaTeX Font Info:    Calculating math sizes for size <11.99997> on input line 12
+.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
 
 (C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+
 
 (C:\Users\Ринат\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (405.76414pt too wide) detected at line 36
+[]\OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^@
+ \OT1/cmr/m/n/10 0 \OMS/cmsy/m/n/10 ^^@ [] ^^C \OT1/cmr/m/n/10 (213)[] \OMS/cms
+y/m/n/10 ^^C \OT1/cmr/m/n/10 (4)[] \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 1\OML/c
+mm/m/it/10 :\OT1/cmr/m/n/10 39 \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 5\OML/cmm/m
+/it/10 :\OT1/cmr/m/n/10 36 + [] \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 (213)[] \O
+MS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 (4)[] \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 1
+\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 39 \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 5\OML
+/cmm/m/it/10 :\OT1/cmr/m/n/10 36 \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 (4)[] \OM
+S/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 39 \OMS/cm
+sy/m/n/10 ^^C \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 36 + [] \OMS/c
+msy/m/n/10 ^^C \OT1/cmr/m/n/10 (213)[] \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 (4)
+[] \OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 39 \
+OMS/cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 39 \OMS/
+cmsy/m/n/10 ^^C \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 36
+ []
+
 [1
 
 {C:/Users/Ринат/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
@@ -277,13 +313,13 @@ L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3611 strings out of 474486
- 56909 string characters out of 5741395
- 1926542 words of memory out of 5000000
- 25862 multiletter control sequences out of 15000+600000
+ 3759 strings out of 474486
+ 59307 string characters out of 5741395
+ 1929542 words of memory out of 5000000
+ 26002 multiletter control sequences out of 15000+600000
  565316 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,93p,278b,229s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,93p,391b,229s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Ринат/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfont
 s/cm/cmbx12.pfb><C:/Users/Ринат/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb><C:/Users/Ринат/AppData/Local/Programs/MiKTe
@@ -295,7 +331,7 @@ fb><C:/Users/Ринат/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmr17.pfb><C:/Users/Ринат/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmr7.pfb><C:/Users/Ринат/AppData/Local/Programs/MiKTeX/
 fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on differentiator.pdf (1 page, 93192 bytes).
+Output written on differentiator.pdf (1 page, 93076 bytes).
 PDF statistics:
  51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

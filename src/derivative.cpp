@@ -83,7 +83,6 @@ node* do_der_oper(node* oper_node)
         case COS:
             new_node = make_node(OPER_TYPE, &mul_tok);
             new_node->right = take_derivative(oper_node->right);
-            fprintf(stderr, "VOLOS\n");
             //left_node = new_node->left;
             left_node = make_node(OPER_TYPE, &mul_tok);
             left_node->left = make_node(VALUE_TYPE, &M_ONE);
@@ -91,7 +90,6 @@ node* do_der_oper(node* oper_node)
             left_node->right->left = make_node(VALUE_TYPE, &M_ONE);
             left_node->right->right = copy_node(oper_node->right);
             new_node->left = copy_node(left_node);
-            fprintf(stderr, "VOLOS\n");
             break;
         case SIN:
             new_node = make_node(OPER_TYPE, &mul_tok);
@@ -164,3 +162,21 @@ node* get_der_log(node* oper_node)
 }
 
 //==========================================================
+
+void take_n_derivatives(tree* token_tree, int derivative_qty)
+{
+    tree* token_tree2 = simplify_tree(token_tree);
+   // add_tex_file(start_str, rand() % 12 + 1);
+    draw_graph(token_tree2, "Tree_graph2.dot");
+    char start_str[1000];
+    handle_operation(token_tree2->root, start_str);
+    add_tex_file(start_str, rand() % 12 + 1);
+
+    for (int i = 1; i < derivative_qty; i++)
+    {
+        token_tree2 = take_tree_of_derivative(token_tree2);
+        token_tree2 = simplify_tree(token_tree2);
+        handle_operation(token_tree2->root, start_str);
+        add_tex_file(start_str, rand() % 12 + 1);
+    }
+}

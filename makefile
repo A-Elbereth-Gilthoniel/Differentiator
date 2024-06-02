@@ -30,8 +30,6 @@ draw:
 	dot $(PREF_FILE)Tree_Graph2.dot -T svg > $(PREF_FILE)Tree_graph2.svg
 	dot $(PREF_FILE)Tree_Graph3.dot -T png > $(PREF_FILE)Tree_graph3.png
 	dot $(PREF_FILE)Tree_Graph3.dot -T svg > $(PREF_FILE)Tree_graph3.svg
-	dot $(PREF_FILE)Tree_Graph4.dot -T png > $(PREF_FILE)Tree_graph4.png
-	dot $(PREF_FILE)Tree_Graph4.dot -T svg > $(PREF_FILE)Tree_graph4.svg
 
 pdf:
 	pdflatex $(PREF_FILE)differentiator.tex

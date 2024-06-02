@@ -147,6 +147,5 @@ list_struct* reversed_list(list_struct* list)
     //     start++;
     //     end--;
     // }
-    fprintf(stderr, "SUCCESS REVERSE\n");
     return new_list;
 }

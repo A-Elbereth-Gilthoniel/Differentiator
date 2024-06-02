@@ -4,5 +4,6 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <ctime>
 
 #define red(str) "\033[31m"#str"\033[0m"

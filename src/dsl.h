@@ -62,3 +62,6 @@
 #define NODE_IS_VARYABLE(NODE)         (NODE->type == VARYABLE_TYPE)
 #define NODE_IS_ZERO(NODE)             (NODE->type == VALUE_TYPE && cmp_with_number(NODE->content.value, (double)0))
 
+// parser.cpp: ERRORS
+#define WRONG_LAST_SYMB fprintf(stderr, red(ERROR)": The wrong character at the end of file: %s\n", take_str_from_node(token_list->data[cur_ind]));
+#define WRONG_COMB      fprintf(stderr, red(ERROR)": The wrong combo-characters at the end of file: %s %s\n", take_str_from_node(token_list->data[cur_ind]), take_str_from_node(token_list->data[cur_ind - 1]));

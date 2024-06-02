@@ -76,13 +76,27 @@ node* encode(char* str)
 double get_value(char* str)
 {
     double value = 0;
+    double non_int = 0.0;
     while (str[index] >= '0' && str[index] <= '9')
     {
         value = value * 10 + str[index] - '0';
         index++;
     }
+
+    if (str[index] == '.')
+    {
+        index++;
+        double divider = 10;
+        while (str[index] >= '0' && str[index] <= '9')
+        {
+            non_int = non_int + (str[index] - '0') / divider;
+            divider *= 10;
+            index++;
+        }
+
+    }
     index--;
-    return value;
+    return value + non_int;
 }
 
 //=========================================================

@@ -70,9 +70,12 @@ node* take_derivative(node* handled_node);
 node* do_der_oper(node* oper_node);
 node* get_der_mul(node* oper_node);
 node* get_der_log(node* oper_node);
+void take_n_derivatives(tree* token_tree, int derivative_qty);
 // checking_values.cpp
 int cmp_with_number(double number1, double number2);
 // latex.cpp
-void make_tex_file(char* start_str, char* final_str);
+void add_tex_file(char* der_str, int picture);
 void handle_operation(node* cur_node, char* str);
-struct whore get_expr(node* handled_node);
+struct copy_str get_expr(node* handled_node);
+void finish_tex_file();
+void make_tex();

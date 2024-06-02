@@ -48,7 +48,6 @@ node* simplify(node* handled_node)
             new_node = make_node(OPER_TYPE, &right_node->content.token);
             new_node->left = make_node(OPER_TYPE, &handled_node->content.token);
             new_node->right = make_node(OPER_TYPE, &handled_node->content.token);
-            // fprintf(stderr, "the last day: %s %s", take_str_from_node(new_node->left), take_str_from_node(new_node->right));
             new_node->left->left = new_node->right->left = left_node;
             new_node->left->right = right_node->left;
             new_node->right->right = right_node->right;
@@ -59,7 +58,6 @@ node* simplify(node* handled_node)
             new_node = make_node(OPER_TYPE, &left_node->content.token);
             new_node->left = make_node(OPER_TYPE, &handled_node->content.token);
             new_node->right = make_node(OPER_TYPE, &handled_node->content.token);
-            // fprintf(stderr, "the last day: %s %s", take_str_from_node(new_node->left), take_str_from_node(new_node->right));
             new_node->left->right = new_node->right->right = right_node;
             new_node->left->left = left_node->left;
             new_node->right->left = left_node->right;
